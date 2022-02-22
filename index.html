@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+</head>
+<body>
+  <div class="container">
+    <div class="col">
+      <div id="text">
+        <h1>Learn to code by watching others</h1>
+
+        <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+          but understanding how developers think is invaluable. </p>
+      </div>
+    </div>
+    <div class="col">
+      <div id="trial">
+        <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
+      </div>
+
+      <div id="form">
+        <form >
+          <input type="text" name="first-name" id="first" placeholder="First Name" onfocus="this.placeholder=''" required>
+          <span id="fn-validate" class="error"></span>
+          <input type="text" name="last-name" id="last" placeholder="Last Name" onfocus="this.placeholder=''" required>
+          <span id="ln-validate" class="error"></span>
+          <input type="email" name="email" id="email" placeholder="Email Address" onfocus="this.placeholder=''" required>
+          <span id="email-validate" class="error"></span>
+          <input type="password" name="password" id="password" placeholder="Password" onfocus="this.placeholder=''" required>
+          <span id="pw-validate" class="error"></span>
+        </form> 
+        <button type="submit" form="form" id="button" onclick="validate()" > CLAIM YOUR FREE TRIAL </button>
+    
+      
+        <p class="small">
+          By clicking the button, you are agreeing to our <span class="terms">Terms and Services</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.github.com/lcmedina">Laura</a>.
+    </p>
+  </footer>
+</body>
+<script>
+  
+  const emailIsValid = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+
+  const validate = () => {
+    if (document.getElementById('first').value == "") {
+        document.getElementById('fn-validate').innerHTML = "First Name cannot be empty"
+        document.getElementById('first').style.border = "2px solid hsl(0, 100%, 74%)"
+     } if (document.getElementById('last').value == "") {
+        document.getElementById('ln-validate').innerHTML = "Last Name cannot be empty"
+        document.getElementById('last').style.border = "2px solid hsl(0, 100%, 74%)"
+     } if (document.getElementById('password').value == "") {
+        document.getElementById('pw-validate').innerHTML = "Password cannot be empty"
+        document.getElementById('password').style.border = "2px solid hsl(0, 100%, 74%)"
+     } if (!emailIsValid(document.getElementById('email').value)) {
+       document.getElementById('email-validate').innerHTML = "Looks like this is not an email"
+       document.getElementById('email').style.border = "2px solid hsl(0, 100%, 74%)"
+     }
+  };
+
+</script>
+</html>
