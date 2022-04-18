@@ -12,15 +12,14 @@
 </head>
 <body>
   <div class="container">
-    <div class="col">
       <div id="text">
         <h1>Learn to code by watching others</h1>
 
         <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
           but understanding how developers think is invaluable. </p>
       </div>
-    </div>
-    <div class="col">
+
+      <div class="sign-up-comp">
       <div id="trial">
         <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
       </div>
@@ -62,15 +61,19 @@
     if (document.getElementById('first').value == "") {
         document.getElementById('fn-validate').innerHTML = "First Name cannot be empty"
         document.getElementById('first').style.border = "2px solid hsl(0, 100%, 74%)"
+        document.getElementById('first').classList.add("error-icon")
      } if (document.getElementById('last').value == "") {
         document.getElementById('ln-validate').innerHTML = "Last Name cannot be empty"
         document.getElementById('last').style.border = "2px solid hsl(0, 100%, 74%)"
+        document.getElementById('last').classList.add("error-icon")
      } if (document.getElementById('password').value == "") {
         document.getElementById('pw-validate').innerHTML = "Password cannot be empty"
         document.getElementById('password').style.border = "2px solid hsl(0, 100%, 74%)"
+        document.getElementById('password').classList.add("error-icon")
      } if (!emailIsValid(document.getElementById('email').value)) {
        document.getElementById('email-validate').innerHTML = "Looks like this is not an email"
        document.getElementById('email').style.border = "2px solid hsl(0, 100%, 74%)"
+       document.getElementById('email').classList.add("error-icon")
      }
   };
 
